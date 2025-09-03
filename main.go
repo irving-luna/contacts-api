@@ -13,7 +13,7 @@ import (
 	"contacts-api/router"
 	"contacts-api/usecase"
 
-	"github.com/gorilla/mux"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
@@ -24,13 +24,13 @@ func main() {
 	contactUsecase := usecase.NewContact(contactRepo)
 
 	// controllers
-	muxRouter := mux.NewRouter()
 	contactController := controller.NewContact(contactUsecase)
 
 	// router
+	echoRouter := echo.New()
 	httpRouter := router.Setup(
 		contactController,
-		muxRouter,
+		echoRouter,
 	)
 
 	server := http.Server{

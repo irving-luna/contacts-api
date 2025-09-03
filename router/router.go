@@ -4,35 +4,23 @@ import (
 	"contacts-api/controller"
 	"net/http"
 
-	"github.com/gorilla/mux"
-
+	"github.com/labstack/echo/v4"
 	"github.com/rs/cors"
 )
 
 // Setup returns router instance which is used in main package to register handlers.
 func Setup(
 	contact *controller.Contact,
-	r *mux.Router,
+	r *echo.Echo,
 ) http.Handler {
 
-	router := r.PathPrefix("/api/v1").Subrouter()
+	router := r.Group("/api/v1")
 
 	// endpoints for contact
-	router.HandleFunc(
-		"/contacts", contact.Create).
-		Methods(http.MethodPost).Name("create_contact")
-
-	router.HandleFunc(
-		"/contacts/{contact_id}", contact.Get).
-		Methods(http.MethodGet).Name("get_contact_by_id")
-
-	router.HandleFunc(
-		"/contacts/{contact_id}", contact.Update).
-		Methods(http.MethodPut).Name("update_contact")
-
-	router.HandleFunc(
-		"/contacts/{contact_id}", contact.Delete).
-		Methods(http.MethodDelete).Name("delete_contact_by_id")
+	router.POST("/contacts", contact.Create)
+	router.GET("/contacts/:contact_id", contact.Get)
+	router.PUT("/contacts/:contact_id", contact.Update)
+	router.DELETE("/contacts/:contact_id", contact.Delete)
 
 	c := cors.New(cors.Options{
 		AllowedOrigins: []string{
