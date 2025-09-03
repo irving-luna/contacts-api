@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"accelone-api/mocks"
-	"accelone-api/model"
+	"contacts-api/mocks"
+	"contacts-api/model"
 	"context"
 	"reflect"
 	"testing"
@@ -36,7 +36,7 @@ func TestContact_Get(t *testing.T) {
 				ctx:       context.Background(),
 				contactID: "aaaa",
 			},
-			want: &expected,
+			want:    &expected,
 			wantErr: false,
 		},
 	}
@@ -63,7 +63,7 @@ func TestContact_Get(t *testing.T) {
 }
 
 func TestContact_Create(t *testing.T) {
-	
+
 	type args struct {
 		ctx     context.Context
 		contact model.Contact
@@ -79,7 +79,7 @@ func TestContact_Create(t *testing.T) {
 			args: args{
 				ctx: context.Background(),
 				contact: model.Contact{
-					Name: "pepe",
+					Name:  "pepe",
 					Phone: "123456",
 				},
 			},

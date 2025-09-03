@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"accelone-api/model"
+	"contacts-api/model"
 	"context"
 )
 
@@ -41,7 +41,7 @@ func (u *Contact) Update(ctx context.Context, id string, contact model.Contact) 
 	return u.contactRepo.Update(ctx, id, contact)
 }
 
-func (u *Contact) Delete(ctx context.Context, contactID string) (error) {
+func (u *Contact) Delete(ctx context.Context, contactID string) error {
 
 	return u.contactRepo.Delete(ctx, contactID)
 }

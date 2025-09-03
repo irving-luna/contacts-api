@@ -1,4 +1,4 @@
-module accelone-api
+module contacts-api
 
 go 1.20
 

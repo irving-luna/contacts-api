@@ -1,7 +1,7 @@
 package usecase
 
 import (
-	"accelone-api/model"
+	"contacts-api/model"
 	"context"
 	"errors"
 )

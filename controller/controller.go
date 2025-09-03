@@ -6,6 +6,12 @@ import (
 	"fmt"
 	"io"
 	"strings"
+
+	"github.com/unrolled/render"
+)
+
+var (
+	crender = render.New()
 )
 
 // https://www.alexedwards.net/blog/how-to-properly-parse-a-json-request-body

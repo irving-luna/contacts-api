@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"accelone-api/model"
+	"contacts-api/model"
 	"context"
 
 	"github.com/google/uuid"
@@ -55,7 +55,7 @@ func (u *Contact) Update(ctx context.Context, contactID string, data model.Conta
 	if !ok {
 		return nil, ErrKeyNotFound
 	}
-	
+
 	data.ID = contactID
 	contacts[contactID] = data
 

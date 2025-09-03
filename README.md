@@ -1,4 +1,4 @@
-# Accelone - Contacts API 
+# Contacts API 
 
 Basic example of CRUD API in golang
 
@@ -12,8 +12,7 @@ Folder structure
 ├── README.md
 ├── controller
 │   ├── contact.go
-│   ├── controller.go
-│   └── router.go
+│   └──controller.go
 ├── go.mod
 ├── go.sum
 ├── main.go
@@ -23,6 +22,8 @@ Folder structure
 ├── repository
 │   ├── contact.go
 │   └── repository.go
+├── router
+│   └── router.go
 └── usecase
     ├── contact.go
     └── usecase.go

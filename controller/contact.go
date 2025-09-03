@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"accelone-api/model"
-	"accelone-api/repository"
-	"accelone-api/usecase"
+	"contacts-api/model"
+	"contacts-api/repository"
+	"contacts-api/usecase"
 	"errors"
 	"net/http"
 

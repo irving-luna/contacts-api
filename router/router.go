@@ -1,21 +1,17 @@
-package controller
+package router
 
 import (
+	"contacts-api/controller"
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/unrolled/render"
 
 	"github.com/rs/cors"
 )
 
-var (
-	crender = render.New()
-)
-
 // Setup returns router instance which is used in main package to register handlers.
 func Setup(
-	contact *Contact,
+	contact *controller.Contact,
 	r *mux.Router,
 ) http.Handler {
 

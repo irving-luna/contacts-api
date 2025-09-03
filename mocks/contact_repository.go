@@ -3,7 +3,7 @@
 package mocks
 
 import (
-	model "accelone-api/model"
+	model "contacts-api/model"
 	context "context"
 
 	mock "github.com/stretchr/testify/mock"

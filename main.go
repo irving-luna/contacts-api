@@ -8,9 +8,10 @@ import (
 	"syscall"
 	"time"
 
-	"accelone-api/controller"
-	"accelone-api/repository"
-	"accelone-api/usecase"
+	"contacts-api/controller"
+	"contacts-api/repository"
+	"contacts-api/router"
+	"contacts-api/usecase"
 
 	"github.com/gorilla/mux"
 )
@@ -26,7 +27,8 @@ func main() {
 	muxRouter := mux.NewRouter()
 	contactController := controller.NewContact(contactUsecase)
 
-	httpRouter := controller.Setup(
+	// router
+	httpRouter := router.Setup(
 		contactController,
 		muxRouter,
 	)
